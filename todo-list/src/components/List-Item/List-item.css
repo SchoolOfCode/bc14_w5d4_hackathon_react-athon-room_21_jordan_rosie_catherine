@@ -1,6 +1,6 @@
 li {
   list-style: none;
-  justify-items: space-evenly;
+  text-align: center;
 }
 
 input {
