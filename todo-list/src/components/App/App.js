@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./App.css";
-import Input from '../Input/Input';
-// import List from '../List';
+import Input from "../Input/Input";
+import List from "../List/List";
 
 function App() {
   const [toDoList, setToDoList] = useState([]);
