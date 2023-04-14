@@ -12,29 +12,24 @@
         */
 
 // import css file & react stuff
-import React, { useState } from "react";
+import React from "react";
 import "./Input.css";
 
 // make component function skeleton & export as default & import addToList prop
-function Input({ addToList, inputText }) {
+function Input({inputText, onInputChange, onAddButtonClick }) {
   // useState - text & setText
-  const [text, setText] = useState("");
 
   return (
-    <div id="input">
-    {/*save input box text as 'newToDo'*/}
+    <div>
       <input
         type="text"
-        onChange={(event) => {
-          inputText(event);
-        }}
-      ></input>
-      <button className="addtodo-button" onClick={addToList}>
-          Add To Do
-        </button>
+        value={inputText}
+        onChange={onInputChange}
+        placeholder="Enter task here"
+      />
+      <button onClick={onAddButtonClick}>Add</button>
     </div>
   );
-
   // input field & button ✅
   // onChange/onClick to update state
   // button click will call the addToList function with value of input (text?)
