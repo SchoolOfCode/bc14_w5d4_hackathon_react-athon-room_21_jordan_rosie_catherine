@@ -1,12 +1,15 @@
 import React, { useState } from "react";
 import "./App.css";
+import Input from '../Input/Input';
+// import List from '../List';
 
 function App() {
   // useState to create toDoList state - array or string?
   const [toDoList, setToDoList] = useState([]);
+  const [text, setText] = useState("");
 
   // function to add an item to the toDoList
-  function addToList() {
+  function addToList(newToDo) {
     // add item to toDoList
     // setToDoList
     setToDoList = [...toDoList, newToDo];
@@ -27,9 +30,9 @@ function App() {
     <div className="App">
       {/* add Input and List as components*/}
       {/* Props - add function  */}
-      <Input addToList={addToList} />
+      <Input inputText={inputText} addToList={addToList} />
       {/* Props - toDoList (array), delete function */}
-      <List inputText={inputText} removeFromList={removeFromList} />
+      {/* <List inputText={inputText} removeFromList={removeFromList} /> */}
     </div>
   );
 }
