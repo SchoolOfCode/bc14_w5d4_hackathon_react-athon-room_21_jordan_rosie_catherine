@@ -1,19 +1,28 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./List-item.css";
+// import Confetti from "react-confetti";
 
-function ListItem({ id, text, removeFromList }) {
+function ListItem({ id, text, removeFromList, toDoList }) {
   const [isChecked, setIsChecked] = useState(false);
+  const [numChecked, setNumChecked] = useState(0);
 
   const handleCheckboxChange = () => {
     setIsChecked(!isChecked); // Toggle checkbox status
+    setNumChecked(numChecked + (isChecked ? -1 : 1)); // Increment or decrement numChecked based on checkbox status
   };
+
+  //   useEffect(() => {
+  //     if (numChecked === toDoList?.length) {
+  //       <Confetti />;
+  //     }
+  //   }, [numChecked, toDoList?.length]);
 
   return (
     <li>
       <input
         type="checkbox"
         checked={isChecked} // Bind checkbox to isChecked state
-        onChange={handleCheckboxChange} // Add event handler for checkbox change
+        onChange={handleCheckboxChange}
       />
       <span
         style={{
@@ -22,7 +31,7 @@ function ListItem({ id, text, removeFromList }) {
       >
         {text}
       </span>
-      <button onClick={() => removeFromList(id)}>X</button>
+      <button onClick={() => removeFromList(id)}>🗑️</button>
     </li>
   );
 }

@@ -3,8 +3,15 @@ import React from "react";
 import "./Input.css";
 
 // make component function skeleton & export as default & import addToList prop
-function Input({inputText, onInputChange, onAddButtonClick }) {
+function Input({ inputText, onInputChange, onAddButtonClick }) {
   // useState - text & setText
+
+  const handleKeyPress = (event) => {
+    if (event.key === "Enter") {
+      // Check if "Enter" key is pressed
+      onAddButtonClick(); // Call the onAddButtonClick function to add the item
+    }
+  };
 
   return (
     <div>
@@ -13,6 +20,7 @@ function Input({inputText, onInputChange, onAddButtonClick }) {
         value={inputText}
         onChange={onInputChange}
         placeholder="Enter task here"
+        onKeyPress={handleKeyPress}
       />
       <button onClick={onAddButtonClick}>Add</button>
     </div>
