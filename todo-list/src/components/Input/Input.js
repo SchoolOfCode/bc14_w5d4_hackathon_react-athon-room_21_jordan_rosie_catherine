@@ -1,16 +1,3 @@
-/*
-<input
-      type="text"
-      onChange={(event) => {
-        handleChange(event);
-      }}
-    /> 
-    
-<button className="randomBootcamperName" onClick={handleBootcamperClick}>
-          Click me for a random bootcamper!
-        </button>
-        */
-
 // import css file & react stuff
 import React from "react";
 import "./Input.css";

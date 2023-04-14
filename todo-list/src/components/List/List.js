@@ -7,7 +7,6 @@ function List({ toDoList, removeFromList }) {
 
   return (
     <div id="todo-list">
-      <h1>To Do List</h1>
       {/* Taking in the array toDoList and mapping through
     parameters - new toDo and index number
     Creates a new li element eac time
