@@ -25,9 +25,7 @@ function Input({ inputText, onInputChange, onAddButtonClick }) {
       <button onClick={onAddButtonClick}>Add</button>
     </div>
   );
-  // input field & button ✅
-  // onChange/onClick to update state
-  // button click will call the addToList function with value of input (text?)
+
 }
 
 export default Input;

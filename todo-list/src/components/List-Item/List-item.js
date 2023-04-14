@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import "./List-item.css";
 // import Confetti from "react-confetti";
 
